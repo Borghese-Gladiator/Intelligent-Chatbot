@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
-
 import {
   BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
-
-import { Nav, Navbar, NavDropdown, Form, FormControl, Button} from 'react-bootstrap'
+import MyNav from './components/Navbar'
 
 function App() {
   const [currentTime, setCurrentTime] = useState(0);
@@ -23,21 +21,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="/">React-Bootstrap</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-            <Nav.Link href="/chatbot">Chatbot</Nav.Link>
-            <Nav.Link href="/corona">Coronabot</Nav.Link>
-            <Nav.Link href="/about">About</Nav.Link>
-          </Nav>
-          <Form inline>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-            <Button variant="outline-success">Search</Button>
-          </Form>
-        </Navbar.Collapse>
-      </Navbar>
+        <MyNav />
 
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
